@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+sudo yum update –y
+
+sudo yum install -y httpd24
+
+sudo chkconfig httpd on
+
+sudo mkdir -p /var/www/html
+
+sudo echo "<html><body>OK</body></html>" > /var/www/html/health.html
+sudo echo "<html><body>INDEX</body></html>" > /var/www/html/index.html
+
+sudo service httpd start
